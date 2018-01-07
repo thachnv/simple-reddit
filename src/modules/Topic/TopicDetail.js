@@ -17,13 +17,26 @@ export default class TopicDetail extends Component {
 
   render() {
     return (
-      <div>
-        <div onClick={this.props.backToTopicList}>back</div>
-        <div>{this.props.selectedTopic.title}</div>
-        <div>{this.props.selectedTopic.content}</div>
-        <div onClick={this.like}>Like ({this.props.selectedTopic.like})</div>
-        <div onClick={this.dislike}>
-          Dislike ({this.props.selectedTopic.dislike})
+      <div className="topic-detail-wrapper">
+        <div className="topic-detail-title-bar">
+          <span className="back-button" onClick={this.props.backToTopicList}>
+            <i className="fa fa-chevron-left" />
+          </span>
+          <span className="topic-detail-title">
+            {this.props.selectedTopic.title}
+          </span>
+        </div>
+        <div className="topic-detail-content">
+          {this.props.selectedTopic.content}
+        </div>
+        <div className="btn-toolbar">
+          <button onClick={this.like} className="btn btn-default">
+            <i className="fa fa-thumbs-o-up" /> {this.props.selectedTopic.like}
+          </button>
+          <button onClick={this.dislike} className="btn btn-default">
+            <i className="fa fa-thumbs-o-down" />{' '}
+            {this.props.selectedTopic.dislike}
+          </button>
         </div>
       </div>
     );

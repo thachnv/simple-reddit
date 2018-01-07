@@ -29,3 +29,25 @@
   margin-left: 10px;
   font-weight: bold;
 }
+
+.topic-detail-wrapper {
+  padding-left: 15px;
+  padding-right: 15px;
+  text-align: left;
+}
+
+.topic-detail-wrapper .topic-detail-content {
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.topic-detail-title-bar .back-button {
+  cursor: pointer;
+  color: #337ab7;
+  padding: 3px;
+}
+.topic-detail-title-bar .topic-detail-title {
+  font-weight: bold;
+}
