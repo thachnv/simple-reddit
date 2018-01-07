@@ -32,7 +32,11 @@ export default class TopicCreate extends Component {
     return (
       <div className="topic-create-wrapper">
         <div className="topic-create-title-bar">
-          <span className="back-button" onClick={this.props.backToTopicList}>
+          <span
+            className="back-button"
+            id="back-button"
+            onClick={this.props.backToTopicList}
+          >
             <i className="fa fa-chevron-left" />
           </span>
           <span className="topic-create-title">Create a new topic</span>
@@ -41,6 +45,7 @@ export default class TopicCreate extends Component {
           <div className="form-group">
             <label>Title:</label>
             <input
+              id="topic-create-title"
               value={this.state.title || ''}
               onChange={this.changeTitle}
               className="form-control"
@@ -49,13 +54,18 @@ export default class TopicCreate extends Component {
           <div className="form-group">
             <label>Content:</label>
             <textarea
+              id="topic-create-content"
               value={this.state.content || ''}
               onChange={this.changeContent}
               className="form-control"
             />
           </div>
         </div>
-        <button className="btn btn-primary" onClick={this.submit}>
+        <button
+          id="topic-create-button-submit"
+          className="btn btn-primary"
+          onClick={this.submit}
+        >
           Create
         </button>
       </div>
