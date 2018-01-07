@@ -7,13 +7,17 @@ const TopicList = ({ topicList, beginCreateTopic, selectTopic }) => (
   <div className="topic-list-wrapper">
     <div>
       <p>
-        <button onClick={beginCreateTopic} className="btn btn-primary">
+        <button
+          id="begin-create-topic-button"
+          onClick={beginCreateTopic}
+          className="btn btn-primary"
+        >
           Create Topic
         </button>
       </p>
     </div>
     <div className="row">
-      <div className="col-xs-12">
+      <div className="col-xs-12" id="topic-list-items">
         {topicList ? (
           topicList.map((topic, index) => (
             <TopicItem
@@ -23,7 +27,7 @@ const TopicList = ({ topicList, beginCreateTopic, selectTopic }) => (
             />
           ))
         ) : (
-          <span>Please create a topic</span>
+          <span id="no-topic-message">Please create a topic</span>
         )}
       </div>
     </div>
