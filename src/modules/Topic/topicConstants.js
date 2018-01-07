@@ -1,0 +1,5 @@
+export const TOPIC_MODE = {
+  VIEW_LIST: 'VIEW_LIST',
+  VIEW_DETAIL: 'VIEW_DETAIL',
+  CREATE: 'CREATE',
+};

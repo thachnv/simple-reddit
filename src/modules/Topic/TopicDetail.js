@@ -18,7 +18,7 @@ export default class TopicDetail extends Component {
   render() {
     return (
       <div>
-        <div onClick={() => this.props.selectTopic(null)}>back</div>
+        <div onClick={this.props.backToTopicList}>back</div>
         <div>{this.props.selectedTopic.title}</div>
         <div>{this.props.selectedTopic.content}</div>
         <div onClick={this.like}>Like ({this.props.selectedTopic.like})</div>
