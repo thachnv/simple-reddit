@@ -1,6 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-export default ({ topic, onClick }) => (
+const TopicItem = ({ topic, onClick }) => (
   <div onClick={onClick} className="topic-item">
     <span className="topic-item-like">
       <i className="fa fa-thumbs-o-up" /> {topic.like}
@@ -11,3 +12,10 @@ export default ({ topic, onClick }) => (
     <span className="topic-item-title">{topic.title}</span>
   </div>
 );
+
+TopicItem.propTypes = {
+  topic: PropTypes.object.isRequired,
+  onClick: PropTypes.func,
+};
+
+export default TopicItem;

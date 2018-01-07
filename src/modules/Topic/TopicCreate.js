@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 export default class TopicCreate extends Component {
+  static propTypes = {
+    createTopic: PropTypes.func,
+    backToTopicList: PropTypes.func,
+  };
+
   state = {
     title: null,
     content: null,
@@ -32,22 +38,22 @@ export default class TopicCreate extends Component {
           <span className="topic-create-title">Create a new topic</span>
         </div>
         <div className="topic-create-form">
-        <div className="form-group">
-          <label>Title:</label>
-          <input
-            value={this.state.title || ''}
-            onChange={this.changeTitle}
-            className="form-control"
-          />
-        </div>
-        <div className="form-group">
-          <label>Content:</label>
-          <textarea
-            value={this.state.content || ''}
-            onChange={this.changeContent}
-            className="form-control"
-          />
-        </div>
+          <div className="form-group">
+            <label>Title:</label>
+            <input
+              value={this.state.title || ''}
+              onChange={this.changeTitle}
+              className="form-control"
+            />
+          </div>
+          <div className="form-group">
+            <label>Content:</label>
+            <textarea
+              value={this.state.content || ''}
+              onChange={this.changeContent}
+              className="form-control"
+            />
+          </div>
         </div>
         <button className="btn btn-primary" onClick={this.submit}>
           Create

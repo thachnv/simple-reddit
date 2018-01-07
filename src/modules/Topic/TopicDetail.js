@@ -1,6 +1,13 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 export default class TopicDetail extends Component {
+  static propTypes = {
+    selectedTopic: PropTypes.object.isRequired,
+    backToTopicList: PropTypes.func,
+    updateTopic: PropTypes.func,
+  };
+
   like = () => {
     this.props.updateTopic({
       ...this.props.selectedTopic,

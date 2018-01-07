@@ -1,33 +1,39 @@
-import React, { Component } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 import TopicItem from './TopicItem.js';
 
-export default class TopicList extends Component {
-  render() {
-    return (
-      <div className="topic-list-wrapper">
-        <div>
-          <p>
-            <button
-              onClick={this.props.beginCreateTopic}
-              className="btn btn-primary"
-            >
-              Create Topic
-            </button>
-          </p>
-        </div>
-        <div className="row">
-          <div className="col-xs-12">
-            { this.props.topicList ? this.props.topicList.map((topic, index) => (
-              <TopicItem
-                key={index}
-                onClick={() => this.props.selectTopic(topic)}
-                topic={topic}
-              />
-            )) : <span>Please create a topic</span>}
-          </div>
-        </div>
+const TopicList = ({ topicList, beginCreateTopic, selectTopic }) => (
+  <div className="topic-list-wrapper">
+    <div>
+      <p>
+        <button onClick={beginCreateTopic} className="btn btn-primary">
+          Create Topic
+        </button>
+      </p>
+    </div>
+    <div className="row">
+      <div className="col-xs-12">
+        {topicList ? (
+          topicList.map((topic, index) => (
+            <TopicItem
+              key={index}
+              onClick={() => selectTopic(topic)}
+              topic={topic}
+            />
+          ))
+        ) : (
+          <span>Please create a topic</span>
+        )}
       </div>
-    );
-  }
-}
+    </div>
+  </div>
+);
+
+TopicList.propTypes = {
+  topicList: PropTypes.array,
+  beginCreateTopic: PropTypes.func,
+  selectTopic: PropTypes.func,
+};
+
+export default TopicList;
