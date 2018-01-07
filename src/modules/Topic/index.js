@@ -2,7 +2,7 @@ import './Topic.css';
 import { connect } from 'react-redux';
 import Topic from './Topic.js';
 
-import { selectTopic } from './topicActions.js';
+import { selectTopic, updateTopic } from './topicActions.js';
 
 const mapStateToProps = state => {
   return {
@@ -14,6 +14,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     selectTopic: topic => dispatch(selectTopic(topic)),
+    updateTopic: topic => dispatch(updateTopic(topic)),
   };
 };
 
