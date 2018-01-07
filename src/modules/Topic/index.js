@@ -1,6 +1,7 @@
 import './Topic.css';
 import { connect } from 'react-redux';
 import Topic from './Topic.js';
+import { createSelector } from 'reselect';
 
 import {
   selectTopic,
@@ -10,9 +11,19 @@ import {
   createTopic,
 } from './topicActions.js';
 
+const getDisplayTopics = createSelector(
+  state => state.topic.topicList,
+  topicList => {
+    const sortedTopicList = [].concat(topicList).sort((a, b) => {
+      return b.like - a.like;
+    });
+    return sortedTopicList.slice(0, 20);
+  },
+);
+
 const mapStateToProps = state => {
   return {
-    topicList: state.topic.topicList,
+    topicList: getDisplayTopics(state),
     selectedTopic: state.topic.selectedTopic,
     mode: state.topic.mode,
   };
