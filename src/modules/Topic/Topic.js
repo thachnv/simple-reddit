@@ -8,11 +8,11 @@ import TopicCreate from './TopicCreate';
 const Topic = ({ mode, ...rest }) => {
   switch (mode) {
     case TOPIC_MODE.VIEW_DETAIL:
-      return <TopicDetail {...rest} />;
+      return <TopicDetail id="topic-detail-component" {...rest} />;
     case TOPIC_MODE.VIEW_LIST:
-      return <TopicList {...rest} />;
+      return <TopicList id="topic-list-component" {...rest} />;
     case TOPIC_MODE.CREATE:
-      return <TopicCreate {...rest} />;
+      return <TopicCreate id="topic-create-component" {...rest} />;
     default:
       return <TopicList {...rest} />;
   }
