@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 export default ({ topic, onClick }) => (
   <div onClick={onClick} className="topic-item">

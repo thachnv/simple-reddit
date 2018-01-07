@@ -46,5 +46,17 @@
   padding-left: 15px;
   padding-right: 15px;
   text-align: left; }
+  .topic-create-wrapper .topic-create-title-bar .back-button {
+    cursor: pointer;
+    color: #337ab7;
+    padding: 3px; }
+  .topic-create-wrapper .topic-create-title-bar .topic-create-title {
+    font-weight: bold; }
+  .topic-create-wrapper .topic-create-form {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 15px;
+    margin-bottom: 15px; }
   .topic-create-wrapper textarea {
     resize: none; }

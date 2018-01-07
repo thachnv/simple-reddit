@@ -2,27 +2,13 @@ import Immutable from 'seamless-immutable';
 import { TOPIC_MODE } from './topicConstants.js';
 
 const INIT_STATE = Immutable({
-  topicList: [
-    {
-      id: 1,
-      title: 'test',
-      content: 'test content',
-      like: 0,
-      dislike: 0,
-    },
-    {
-      id: 2,
-      title: 'test1',
-      content: 'test content1',
-      like: 0,
-      dislike: 0,
-    },
-  ],
+  topicList: null,
   selectedTopic: null,
   mode: TOPIC_MODE.VIEW_LIST,
 });
 
 const generateTopicId = topicList => {
+  if (!topicList) return 0;
   let maxId = 0;
   topicList.forEach(topic => {
     if (maxId < topic.id) {
@@ -53,15 +39,17 @@ const topicReducer = (state = INIT_STATE, action) => {
       return state.set('mode', TOPIC_MODE.CREATE);
     case 'CREATE_TOPIC':
       const { title, content } = action.data;
-      const newTopic = Immutable({
+      const newTopic = {
         id: generateTopicId(state.topicList),
         title,
         content,
         like: 0,
         dislike: 0,
-      });
+      };
       return state.merge({
-        topicList: state.topicList.concat(newTopic),
+        topicList: state.topicList
+          ? state.topicList.concat(newTopic)
+          : Immutable([newTopic]),
         mode: TOPIC_MODE.VIEW_LIST,
       });
     default:

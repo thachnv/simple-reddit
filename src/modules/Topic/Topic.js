@@ -14,6 +14,8 @@ export default class Topic extends Component {
         return <TopicList {...this.props} />;
       case TOPIC_MODE.CREATE:
         return <TopicCreate {...this.props} />;
+      default:
+        return <TopicList {...this.props} />;
     }
   }
 }

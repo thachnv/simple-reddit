@@ -14,6 +14,7 @@ import {
 const getDisplayTopics = createSelector(
   state => state.topic.topicList,
   topicList => {
+    if (!topicList) return null;
     const sortedTopicList = [].concat(topicList).sort((a, b) => {
       return b.like - a.like;
     });
