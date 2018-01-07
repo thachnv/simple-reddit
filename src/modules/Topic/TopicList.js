@@ -4,8 +4,6 @@ import TopicItem from './TopicItem.js';
 
 export default class TopicList extends Component {
   render() {
-    console.log(this.props.selectTopic);
-
     return (
       <div className="topic-list-wrapper">
         <div>

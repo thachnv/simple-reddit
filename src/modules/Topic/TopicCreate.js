@@ -24,24 +24,26 @@ export default class TopicCreate extends Component {
 
   render() {
     return (
-      <div>
+      <div className="topic-create-wrapper">
         <div className="form-group">
           <label>Title:</label>
           <input
-            value={this.state.title}
+            value={this.state.title || ''}
             onChange={this.changeTitle}
             className="form-control"
           />
         </div>
         <div className="form-group">
           <label>Content:</label>
-          <input
-            value={this.state.content}
+          <textarea
+            value={this.state.content || ''}
             onChange={this.changeContent}
             className="form-control"
           />
         </div>
-        <button onClick={this.submit}>Submit</button>
+        <button className="btn btn-primary" onClick={this.submit}>
+          Create
+        </button>
       </div>
     );
   }
