@@ -1,6 +1,31 @@
+.topic-list-wrapper {
+  padding-left: 15px;
+  padding-right: 15px;
+  text-align: left;
+}
 .topic-item {
-    border: 1px solid #bebebe;
-    border-radius: 5px;
-    margin-bottom: 5px;
-    padding: 10px;
+  border: 1px solid #bebebe;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.1s;
+}
+
+.topic-item:hover {
+  background-color: #e6e6e6;
+}
+
+.topic-item-dislike {
+  margin-left: 5px;
+}
+
+.topic-item-like,
+.topic-item-dislike {
+  padding-right: 5px;
+  border-right: 1px solid black;
+}
+.topic-item-title {
+  margin-left: 10px;
+  font-weight: bold;
 }
