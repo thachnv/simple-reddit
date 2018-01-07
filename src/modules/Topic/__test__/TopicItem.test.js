@@ -13,18 +13,22 @@ let topic = {
 it('renders data correctly', () => {
   const testRenderer = renderer.create(<TopicItem topic={topic} />);
   const testInstance = testRenderer.root;
-  expect(testInstance.findByProps({ id: 'topic-item-title' }).children).toEqual([
-    'testTitle',
+  expect(testInstance.findByProps({ id: 'topic-item-title' }).children).toEqual(
+    ['testTitle'],
+  );
+  expect(testInstance.findByProps({ id: 'topic-item-like' }).children).toEqual([
+    '9',
   ]);
-  expect(testInstance.findByProps({ id: 'topic-item-like' }).children).toEqual(['9']);
-  expect(testInstance.findByProps({ id: 'topic-item-dislike' }).children).toEqual([
-    '2',
-  ]);
+  expect(
+    testInstance.findByProps({ id: 'topic-item-dislike' }).children,
+  ).toEqual(['2']);
 });
 
 it('calls onClick when user click', () => {
   const onClickFn = jest.fn();
-  const testRenderer = renderer.create(<TopicItem topic={topic} onClick={onClickFn} />);
+  const testRenderer = renderer.create(
+    <TopicItem topic={topic} onClick={onClickFn} />,
+  );
   const testInstance = testRenderer.root;
   testInstance.props.onClick();
   expect(onClickFn).toBeCalled();
