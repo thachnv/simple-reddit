@@ -27,6 +27,10 @@ Run test:
     
     yarn test
     
-Build production
+Build production:
 
     yarn build
+    
+Or just access the deployed app here:
+
+    https://simple-reddit-thachnv.herokuapp.com/
